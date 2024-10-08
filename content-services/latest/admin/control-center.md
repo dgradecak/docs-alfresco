@@ -28,7 +28,7 @@ There are a number of software requirements for installing the Control Center. T
 
 ### Containerized deployment
 
-The images downloaded directly from [Docker Hub](https://hub.docker.com/u/alfresco/){:target="_blank"}, or [Quay.io](https://quay.io/){:target="_blank"} are for a limited trial of the Enterprise version of Content Services that goes into read-only mode after 2 days. For a longer (30-day) trial, get the Alfresco Content Services [Download Trial](https://www.alfresco.com/platform/content-services-ecm/trial/download){:target="_blank"}.
+The images downloaded directly from [Docker Hub](https://hub.docker.com/u/alfresco/){:target="_blank"}, or [Quay.io](https://quay.io/){:target="_blank"} are for a limited trial of the Enterprise version of Content Services that goes into read-only mode after 2 days. For a longer (30-day) trial, get the Alfresco Content Services [Download Trial](https://www.hyland.com/en/resources/alfresco-ecm-download){:target="_blank"}.
 
 > **Note:** A [Quay.io](https://quay.io/){:target="_blank"} account is needed to pull the Docker images that are needed:
 >
@@ -53,13 +53,13 @@ These steps describe how to quickly start up Content Services (including Control
 
 To deploy Content Services using Docker Compose, download and install [Docker](https://docs.docker.com/install/){:target="_blank"}, then follow the steps below. Make sure that you've reviewed the [prerequisites](#prerequisites) before continuing.
 
-1. Download the `docker-compose.yml` file by accessing the Content Services [Download Trial](https://www.alfresco.com/platform/content-services-ecm/trial/download){:target="_blank"} page, which will give you a 30-day license.
+1. Download the `docker-compose.yml` file by accessing the Content Services [Download Trial](https://www.hyland.com/en/resources/alfresco-ecm-download){:target="_blank"} page, which will give you a 30-day license.
 
-    If you already have a valid license file for Content Services 7.4, you can apply it directly to the running system. See [Uploading a new license]({% link content-services/latest/admin/license.md %}) for more details.
+    If you already have a valid license file for Content Services 23.1, you can apply it directly to the running system. See [Uploading a new license]({% link content-services/latest/admin/license.md %}) for more details.
 
     > **Note:** Make sure that exposed ports are open on your host computer. Check the `docker-compose.yml` file to determine the exposed ports - refer to the `host:container` port definitions. You'll see they include 5432, 8080, 8083 and others.
 
-    > **Note:** The Download Trial is usually updated for the most recent version of Content Services. The latest published version on our website is labelled *Version 7.4 - May 2023*.
+    > **Note:** The Download Trial is usually updated for the most recent version of Content Services. The latest published version on our website is labelled *Version 23.1.1 - November 2023*.
 
 2. Save the `docker-compose.yml` file in a local folder.
 
@@ -181,7 +181,7 @@ Once the group has been created, click the vertical ellipsis (**&vellip;**) at e
 ## Tags
 
 A tag is a marker that you can assign to related content to help categorize it. This makes it easier to view related content. You can create tags in the Control Center that can be used in the Digital Workspace. For example, you may create tags called **proposal-one**, and  **proposal-two** to help you identify all the content that has been created for two different versions of a design. In the Digital Workspace you can search your content that has specific tags.
-For more on their use in the Digital Workspace, see [Tags]({% link content-services/latest/using/content/tags-categories.md %}#tags).
+For more on their use in the Digital Workspace, see [Tags]({% link digital-workspace/latest/using/tags-categories.md %}#tags).
 
 To create a tag:
 
@@ -205,7 +205,7 @@ The tag list automatically refreshes and you can see the new tag you created. If
 
 ## Categories
 
-A category is a group of files, or other categories, that all relate to a project or concept. Content can be a part of more than one category, for example, a category called **Language** may include a language file called **English**, and the file may also exist within a category called **Country**. For more on their use in the Digital Workspace, see [Categories]({% link content-services/latest/using/content/tags-categories.md %}#categories)
+A category is a group of files, or other categories, that all relate to a project or concept. Content can be a part of more than one category, for example, a category called **Language** may include a language file called **English**, and the file may also exist within a category called **Country**. For more on their use in the Digital Workspace, see [Categories]({% link digital-workspace/latest/using/tags-categories.md %}#categories)
 
 To create a root level category:
 
@@ -222,6 +222,65 @@ To create a root level category:
 The category tree automatically refreshes and you can see the new category you created. If you click the three dots on the right hand side of your category you are able to **Create a subcategory**, **Edit** it, or **Delete** it.  
 
 A category name does not need to be unique to the Control Center, it only needs to be unique within the level it sits in within the Control Center.
+
+## Security Controls
+
+You can add Security Controls to files and folders so that only users with the required security level can view or access them.
+These security controls are created and configured using the Control Center and are applied to your files or folders from within the Digital Workspace. The Security Controls you create are made up of Controls created in the Control Center which are in turn made up of one or more Security Marks. You can create as many Security Marks that you require within the different Controls. The names of the Controls and Security Marks you create will be unique to your organization.
+
+There are three different ways you can configure your Controls:
+
+* **All** = Users must have all Security Marks from the group that are applied to a file to see that file.
+
+    Example: A Security Group named Training contains Security Marks of Media and Data Handling. To see a file marked as both Media or Data Handling, a user must have both Media and Data Handling clearance.
+
+* **Any** = Users must have at least one of the Security Marks from the group that are applied to a file to see that file.
+
+    Example: A Security Group named Nationality contains Security Marks of UK, US, and Aus. To see a file marked as UK and US, a user must have UK and / or US clearance.
+
+* **Hierarchical** = Security Marks are ranked in the order they're created. The mark created first in a security group has the greatest clearance, the one created last the least clearance.
+
+    Example: The predefined Classification group has marks of Top Secret, Secret, and Classified. To see a file classified as Secret, the user must have Secret or Top Secret clearance.
+
+### Security Controls in the Control Center
+
+Use this example to create an **All** Control in the Control Center called Training that has three Security Marks, **Media**, **Data handling**, and **Backend management**.
+
+> **Important:** All Security Marks you create are visible to all users within the Digital Workspace.
+
+#### Create Controls and Security Marks
+
+Use the Control Center to create Controls.
+
+1. Log into the Control Center as an administrator.
+
+2. Expand the **Security** entry in the left pane and then click **Security Controls**.
+
+    You can view and edit all of your Controls from here.
+
+3. Click **Create New Control**.
+
+4. Enter `Training` in the **Control Name** field.
+
+5. Select **All** from the **Configuration** drop-down list.
+
+    You can see from the example diagram the user has `Mark 2` security rights. When **All** is selected from the **Configuration** drop-down list it means they can only access files or directories that only have `Mark 2` Security Marks assigned to them.
+
+6. Click the **+** symbol next to Security Marks.
+
+7. Enter `Media` into the new row.
+
+8. Click the **+** symbol again next to Security Marks.
+
+9. Enter `Data handling` into the new row.
+
+10. Click the **+** symbol again next to Security Marks.
+
+11. Enter `Backend management` into the new row and then click **Save**.
+
+You have created a new Control called `Training` that has three Security Marks. The [Security Marks]({% link digital-workspace/latest/governance/security.md %}) will be visible and useable within the Digital Workspace.
+
+![security-controls]({% link digital-workspace/images/security-controls.png %})
 
 ## Troubleshooting
 

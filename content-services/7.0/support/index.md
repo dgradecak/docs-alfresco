@@ -79,6 +79,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Desktop Sync 1.9 | |
 | Alfresco Desktop Sync 1.8 | |
 | Alfresco Desktop Sync 1.7 | |
+| Alfresco Transform Service 1.5 | |
 | Alfresco Transform Service 1.4 | |
 | Alfresco Transform Service 1.3.2 | |
 | Alfresco Document Transformation Engine 2.4 | |
@@ -121,6 +122,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Digital Workspace 2.1 | |
 | Alfresco Application Development Framework (ADF) 5.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
 | Alfresco Application Development Framework (ADF) 4.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
+| Alfresco Mobile Workspace 1.8 | |
 | Alfresco Mobile Workspace 1.7 | |
 | Alfresco Mobile Workspace 1.6 | |
 | Alfresco Mobile Workspace 1.5 | |
@@ -206,6 +208,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Desktop Sync 1.9 | |
 | Alfresco Desktop Sync 1.8 | |
 | Alfresco Desktop Sync 1.7 | |
+| Alfresco Transform Service 1.5 | |
 | Alfresco Transform Service 1.4 | |
 | Alfresco Transform Service 1.3.2 | |
 | Alfresco Document Transformation Engine 2.4 | |
@@ -247,6 +250,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Digital Workspace 2.1 | |
 | Alfresco Application Development Framework (ADF) 5.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
 | Alfresco Application Development Framework (ADF) 4.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
+| Alfresco Mobile Workspace 1.8 | |
 | Alfresco Mobile Workspace 1.7 | |
 | Alfresco Mobile Workspace 1.6 | |
 | Alfresco Mobile Workspace 1.5 | |

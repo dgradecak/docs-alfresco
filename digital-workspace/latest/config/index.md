@@ -61,6 +61,18 @@ You can edit the columns you want to see in any of the file views in the Digital
 
     The columns are no longer visible in the view.
 
+### Drag and drop
+
+You can manually edit the position of the columns in any of the file views in Digital Workspace. To do so, complete the following steps.
+
+1. Log in to the Digital Workspace.
+
+2. In the view you want to adjust, drag and drop the columns to your desired position. 
+
+    > **Note:**
+    > * A column can be dragged to a different position if the ``draggable`` parameter of the column is set to ``true`` in the Config file.
+    > * The position does not revert back to the original view, once you click away.
+
 ### Configure default columns
 
 A system administrator can use the `app.extension.json` file to configure which columns are visible by default. If the file is not adjusted all the columns will show by default.
@@ -110,8 +122,19 @@ Setting permissions for folders and files allows you to manage what type of acce
 
 4. (Optional) Use the slider to allow the added users or groups to inherit the permissions from the parent folder.
 
-## Search Configuration
+## Search
 
-The search filters that are available in the Digital Workspace can be refined and tailored to your specific needs by creating custom search forms. Each form can contain a set of filters that are relevant to a particular task or user group within your organization. You can select the most useful search form from the drop-down list on the search results page. For details on how to create and configure search forms for a more intuitive search experience see [Search Configuration Guide](https://github.com/Alfresco/alfresco-ng2-components/blob/develop/docs/user-guide/search-configuration-guide.md){:target="_blank"}.
+The default search capability in the Digital Workspace contains six filters that can be used to refine the searches you make against your content. You can use the search filters in conjunction with each other to help further refine your results. The contents of the filters can be configured to suit your needs and can be based on the metadata you have chosen to assign to your content. Dublin core and Effectivity element sets have additionally been provided for you to use to help filter your content, if you are using those standard classification types. They can be selected under the **Filter Set** heading.
+
+### Search filters
+
+Use the **Logic** filter to match or exclude words, and phrases. Use the **Properties** filter to limit, exclude, or exactly match files of a certain size. You can also filter by file type. Use the **Date** filter to find files created or modified within specific time periods. Use the **Location** filter to include locations of where you would like to focus your search results, for example Europe, or Marketing. Use the **Tags** filter to include content that has been tagged, for more see [Tags]({% link content-services/latest/admin/control-center.md %}#tags). Use the **Categories** filter to include content that has been categorized, for more see [Categories]({% link content-services/latest/admin/control-center.md %}#categories).
+
+![search]({% link digital-workspace/images/search-user-interface.png %})
+
+### Search configuration
+
+The search filters that are available in the Digital Workspace can be refined and tailored to your specific needs by creating custom search forms. Each form can contain a set of filters that are relevant to a particular task or user group within your organization. You can select the most useful search form from the drop-down lists on the search results page. For details on how to create and configure search forms for a more intuitive search experience, see the [Search Configuration Guide](https://github.com/Alfresco/alfresco-ng2-components/blob/develop/docs/user-guide/search-configuration-guide.md){:target="_blank"}.
 
 ![search]({% link digital-workspace/images/search-integration.png %})
+

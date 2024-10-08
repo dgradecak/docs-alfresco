@@ -128,11 +128,12 @@ Default value:
 ```text
 (t:Navigation),(prevPage,nextPage, zoomIn,zoomOut,--isSmallScreen),
 (t:Mode),(t:PageEntry),d(checkinOfflineAnnotatedPdf,annotatedPdf,nativeContentDownload,extractPdfPages,offlineAnnotatedPdf,printAnnotatedPdf,
-printSectionsAction,--dropdownLabel-Downloads,--dropdownIcon-save_alt),(t:AnnotationManipulation),
-(t:Misc),d(t:Text,--dropdownLabel-Text Annotations,--dropdownIcon-font_download,--dropdownShowSelected),
-d(drawLine,drawArrow,drawEllipse,drawRectangle,drawBox,textbox,freeDraw,--dropdownLabel-Drawing Tools,--dropdownIcon-edit,--dropdownShowSelected),
-d(approvedStamp,paidStamp,reviewedStamp,acceptStamp,rejectStamp,pageSizedCheckmarkStamp,--dropdownLabel-Stamps,--dropdownIcon-layers,--dropdownShowSelected),
-d(t:Color,--dropdownLabel-Color Picker,--dropdownIcon-palette,--dropdownShowSelected),
+printSectionsAction,--dropdownLabel-viewer.toolbar.downloadTools.tooltip,--dropdownIcon-save_alt),(t:AnnotationManipulation),
+(t:Misc),d(t:Text,--dropdownLabel-viewer.toolbar.textSelect.tooltip,--dropdownIcon-font_download,--dropdownShowSelected),
+d(drawLine,drawArrow,drawEllipse,drawRectangle,drawBox,textbox,freeDraw,--dropdownLabel-viewer.toolbar.drawingTools.tooltip,--dropdownIcon-edit,--dropdownShowSelected),
+d(approvedStamp,paidStamp,reviewedStamp,acceptStamp,rejectStamp,pageSizedCheckmarkStamp,customStamp1,customStamp2,customStamp3,customStamp4,customStamp5,--dropdownLabel-viewer.toolbar.stamps.tooltip,--dropdownIcon-layers,--dropdownShowSelected),
+d(t:Color,--dropdownLabel-viewer.toolbar.colorpicker.tooltip,--dropdownIcon-palette,--dropdownShowSelected),
+d(t:ChangeBgColor,--dropdownLabel-viewer.toolbar.changeBgColor.tooltip,--dropdownIcon-format_paint,--dropdownShowSelected),
 (save,--isSmallScreen),(printAnnotatedPdf,--isSmallScreen),(stickyNote,--isSmallScreen),(highlight,--isSmallScreen),(t:Help),(toggleChat,t:Summary,--sidebar)
 ```
 
@@ -146,9 +147,6 @@ Default value:
 ```text
 (t:Navigation),(prevPage,nextPage,zoomIn,zoomOut,--isSmallScreen),
 (t:Mode),(t:PageEntry),(save,--showAtAllSizes),(mouse),(drawRedaction,textRedaction,--showAtAllSizes),(t:Help),(t:Search,--sidebar)
-enabledIndexerActions=(t:PageEntry),(t:Navigation),(mouse),(prevPage,nextPage,zoomIn,zoomOut,--isSmallScreen),(drawRectangle,--showAtAllSizes),(selectText),(t:Help)
-enabledEditActions=(t:Navigation),(prevPage,nextPage,zoomIn,zoomOut,--isSmallScreen),
-(t:Mode),(t:PageEntry),(save,--showAtAllSizes),(t:DocumentManipulation,--showAtAllSizes),(t:Help)
 ```
 
 ### enabledIndexerActions
@@ -185,7 +183,6 @@ Default value:
 (t:PageEntry),(t:Navigation),(prevPage,nextPage,zoomIn,zoomOut,--isSmallScreen),(t:Help)
 ```
 ​
-
 ### enabledSignatureActions
 
 The Actions enabled in document signing mode.
@@ -273,7 +270,7 @@ Actions that belong to this type: `annotationMode`, `redactMode`, `editMode`, `s
 PDF: "Pdf",
 ```
 
-Actions that belong to this type: `drawRedaction`, `signature`, `rotatePageClockwise`, `rotatePageCounterClockwise`, `selectText`, `strikeout`, `insertText`, `replaceText`, `annotatedPdf`, `unannotatedPdf`, `offlineAnnotatedPdf`, `extractPdfPages`, `printAnnotatedPdf`, `controlledPrintAnnotatedPdf`, `checkinOfflineAnnotatedPdf`.
+Actions that belong to this type: `drawRedaction`, `signature`, `rotatePageClockwise`, `rotatePageCounterClockwise`, `selectText`, `strikeout`, `insertText`, `replaceText`, `annotatedPdf`, `unannotatedPdf`, `offlineAnnotatedPdf`, `extractPdfPages`, `printAnnotatedPdf`, `checkinOfflineAnnotatedPdf`.
 
 ```json
 /**
@@ -310,7 +307,7 @@ Actions that belong to this type: `zoomIn`, `zoomOut`, `fitWidth`, `fitHeight`.
 TOOL: "Tool",
 ```
 
-Actions that belong to this type: `mouse`, `drawRedaction`, `signature`, `stickyNote`, `drawLine`, `drawArrow`, `drawRectangle`, `textbox`, `drawEllipse`, `freeDraw`, `selectText`, `highlight`, `strikeout`, `insertText`, `replaceText`, `acceptStamp`, `approvedStamp`, `pageSizedCheckmarkStamp`, `rejectStamp`, `reviewedStamp`.
+Actions that belong to this type: `mouse`, `drawRedaction`, `signature`, `stickyNote`, `drawLine`, `drawArrow`, `drawRectangle`, `textbox`, `drawEllipse`, `freeDraw`, `selectText`, `highlight`, `strikeout`, `insertText`, `replaceText`, `acceptStamp`, `approvedStamp`, `pageSizedCheckmarkStamp`, `rejectStamp`, `reviewedStamp`, `paidStamp`, `customStamp1`, `customStamp2`, `customStamp3`, `customStamp4`, `customStamp5`.
 
 ```json
 /**
@@ -329,7 +326,7 @@ Actions that belong to this type: `toggleAnnotations`, `keepToolSelected`,  `com
 DOWNLOAD: "Download",
 ```
 
-Actions that belong to this type: `annotatedPdf`, `unannotatedPdf`, `offlineAnnotatedPdf`, `extractPdfPages`, `printAnnotatedPdf`, `controlledPrintAnnotatedPdf`, `sectionPdfDocument`.
+Actions that belong to this type: `annotatedPdf`, `unannotatedPdf`, `offlineAnnotatedPdf`, `extractPdfPages`, `printAnnotatedPdf`, `sectionPdfDocument`.
 
 ```json
 /**
@@ -338,7 +335,7 @@ Actions that belong to this type: `annotatedPdf`, `unannotatedPdf`, `offlineAnno
 ANNOTATION: "Annotation",
 ```
 
-Actions that belong to this type: `stickyNote`, `drawLine`, `drawArrow`, `drawRectangle`, `textbox`, `drawEllipse`, `freeDraw`, `highlight`, `strikeout`, `insertText`, `replaceText`, `acceptStamp`, `approvedStamp`, `pageSizedCheckmarkStamp`, `rejectStamp`, `reviewedStamp`, `undo`, `redo`, `checkinOfflineAnnotatedPdf`.
+Actions that belong to this type: `stickyNote`, `drawLine`, `drawArrow`, `drawRectangle`, `textbox`, `drawEllipse`, `freeDraw`, `highlight`, `strikeout`, `insertText`, `replaceText`, `acceptStamp`, `approvedStamp`, `pageSizedCheckmarkStamp`, `rejectStamp`, `reviewedStamp`, `paidStamp`, `customStamp1`, `customStamp2`, `customStamp3`, `customStamp4`, `customStamp5`, `undo`, `redo`, `checkinOfflineAnnotatedPdf`.
 
 ```json
 /**
@@ -374,7 +371,7 @@ Actions that belong to this type: `selectText`, `highlight`, `strikeout`, `inser
 STAMP: "Stamp",
 ```
 
-Actions that belong to this type: `acceptStamp`, `approvedStamp`, `pageSizedCheckmarkStamp`, `rejectStamp`, `reviewedStamp`, `signature`.
+Actions that belong to this type: `acceptStamp`, `approvedStamp`, `pageSizedCheckmarkStamp`, `rejectStamp`, `reviewedStamp`, `paidStamp`, `customStamp1`, `customStamp2`, `customStamp3`, `customStamp4`, `customStamp5`, `signature`.
 
 ```json
 /**
@@ -450,24 +447,39 @@ Actions that belong to this type: `help`.
 
 ```json
 /**
- * Actions that should be used only if the document has sections.
- */
-SECTIONED: "Sectioned"
-```
-
-Actions that belong to this type: `printSectionsAction`.
-​
-**Note** : The `printSectionsAction` action and the `SECTIONED` action type was developed alongside a new property, `determineSectionsFromProperty` that can allow you to parse sections automatically for your document based on a document property. `determineSectionsFromProperty` defaults to `false`, but should be equal to the name of the property if you want to turn on the feature.
-
-```json
-/**
  * Actions that can be used by non-sectioned documents. 
  */
 NONSECTIONED: "NonSectioned"
 ```
 
 Actions that belong to this type: `printAnnotatedPdf`.
-​
+
+```json
+/**
+ * Actions related-to collaboration mode.
+ */
+COLLABORATION: "Collaboration"
+```
+
+Actions that belong to this type: `toggleChat`, `teamsCall`, `zoomCall`.
+
+```json
+/**
+ * Actions relating to color.
+ */
+COLOR: "Color"
+```
+
+Actions that belong to this type: `colorBlack`, `colorBlue`, `colorDefault`, `colorGray`, `colorGreen`, `colorOrange`, `colorPurple`, `colorRed`, `colorReset`, `color-white`, `colorYellow`.
+
+```json
+/**
+ * Actions relating to fill color of text box.
+ */
+CHANGE_BG_COLOR: "ChangeBgColor"
+```
+
+Actions that belong to this type: `bgColorBlack`, `bgColorDefault`, `bgColorLavender`, `bgColorLightBlue`, `bgColorLightGreen`, `bgColorLightGrey`, `bgColorLightPink`, `bgColorLightSalmon`, `bgColorLightYellow`, `bgColorRemove`, `colorReset`, `bgColorWhite`.
 
 ## Action groups, toolbar order, and dropdowns
 
@@ -521,3 +533,72 @@ to:
 `(editMode),(t:PageEntry),(save,--showAtAllSizes),(rotatePageCounterClockwise,rotatePageClockwise,--showAtAllSizes),(t:Help)`
 `enabledOpenViewerActions=(t:Navigation),(prevPage,nextPage, zoomIn,zoomOut,--isSmallScreen),`
 `(editMode),(t:PageEntry),(printAnnotatedPdf),(rotatePageCounterClockwise,rotatePageClockwise,--showAtAllSizes),(mouse),(t:Help)`
+
+## Require ACS Permissions for AEV modes and actions
+
+The following table lists ACS Permissions for AEV Modes:
+
+| AEV | ACS Security Access Needed |
+| --- | -------------------------- |
+| signature | Read, Write |
+| annotationMode | {::nomarkdown}<ul><li>Read (All the actions works with Read permission will be visible)</li><li>Read, AddChildren, Write</li></ul>{:/} |
+| editMode | Read, AddChildre, Write |
+| redactMode | Read, Write |
+| viewerwithtextMode | Read, Write |
+
+The following table lists ACS Permissions for AEV Actions:
+
+| AEV Actions | ACS Security Access Needed as per Front End |
+| ----------- | ------------------------------------------- |
+| prevPage | Read |
+| nextPage | Read |
+| zoomIn | Read |
+| zoomOut | Read |
+| checkinOfflineAnnotatedPdf | Read, AddChildren, Write |
+| annotatedPdf | Read |
+| nativeContentDownload | Read |
+| extractPdfPages | Read |
+| offlineAnnotatedPdf | Read |
+| printAnnotatedPdf | Read |
+| drawLine | Read, AddChildren, Write |
+| drawArrow | Read, AddChildren, Write |
+| drawEllipse | Read, AddChildren, Write |
+| drawRectangle | Read, AddChildren, Write |
+| textbox | Read, AddChildren, Write |
+| freeDraw | Read, AddChildren, Write |
+| approvedStamp | Read, AddChildren, Write |
+| paidStamp | Read, AddChildren, Write |
+| reviewedStamp | Read, AddChildren, Write |
+| acceptStamp | Read, AddChildren, Write |
+| rejectStamp | Read, AddChildren, Write |
+| pageSizedCheckmarkStamp | Read, AddChildren, Write |
+| customStamp1 | Read, AddChildren, Write |
+| customStamp2 | Read, AddChildren, Write |
+| customStamp3 | Read, AddChildren, Write |
+| customStamp4 | Read, AddChildren, Write |
+| customStamp5 | Read, AddChildren, Write |
+| save | Read, AddChildren, Write |
+| stickyNote | Read, AddChildren, Write |
+| highlight | Read, AddChildren, Write |
+| toggleChat | Read |
+| mouse | Read |
+| drawRedaction | Read, Write |
+| textRedaction | Read, Write |
+| selectText | Read |
+| strikeout | Read, AddChildren, Write |
+| addAttachment | Read, AddChildren, Write |
+| keepToolSelected | Read, AddChildren, Write |
+| insertText | Read, AddChildren, Write |
+| underline | Read, AddChildren, Write |
+| replaceText | Read, AddChildren, Write |
+| t:Navigation | Read |
+| t:Mode | {::nomarkdown}<ul><li>Read, Write</li><li>Read, Write, AddChildren (to use it under annotationMode)</li></ul>{:/} |
+| t:PageEntry | Read |
+| t:AnnotationManipulation | Read, AddChildren, Write |
+| t:Misc | Read, AddChildren, Write |
+| t:Text | Read, AddChildren, Write |
+| t:Color | Read, AddChildren, Write |
+| t:Help | Read |
+| t:Summary | Read |
+| t:Search | Read |
+| t:DocumentManipulation | Read, Write |

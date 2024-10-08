@@ -44,11 +44,8 @@ The following table shows the authentication subsystem types supplied and the op
 | kerberos | Authentication through a Kerberos realm | Yes, SPNEGO | No |
 | external | Authentication using an external SSO mechanism | Yes | No |
 | identity-service | Authentication using the Identity Service | Yes | No |
-| SAML | Authentication through the SAML open standard | Yes | No |
 
 > **Important:** Support for Microsoft Office depends on the authentication mechanism provided by the `external` subsystem. See [External authentication and SSO](#extauthsso) for more information.
-
-> **Important:** SAML Single Sign On can be used for Content Services and Alfresco Office Services. SAML Single Sign On is not fully implemented when mapping a PC network drive over WebDAV, i.e. to either `<alfresco_host>/alfresco/webdav` or `<alfresco_host>/alfresco/aos` endpoints. As a workaround, a PC user should use SAML to login to Content Services before mapping the drive, otherwise the map request may fail.
 
 > **Note:** If you're using a proxy (load balancer) with Kerberos authentication, either:
 
@@ -1452,7 +1449,7 @@ Use this information to configure Content Services to authenticate using Identit
 
 Configure the `alfresco-global.properties` file using the below properties:
 
-> **Note:** See the Keycloak documentation for a [full list of possible properties](https://www.keycloak.org/docs/4.8/securing_apps/index.html#_java_adapter_config).
+> **Note:** See the Keycloak documentation for a [full list of possible properties](https://www.keycloak.org/docs/latest/securing_apps/index.html#_java_adapter_config).
 
 | Property | Description |
 | -------- | ----------- |
@@ -1467,6 +1464,17 @@ Configure the `alfresco-global.properties` file using the below properties:
 | identity-service.ssl-required | Sets whether communication to and from the Identity Service server is over HTTPS. Possible values are `all` for all requests, `external` for external requests or `none`. This property needs to match the equivalent setting for **Require SSL** in your realm within the Identity Service administration console. The default value  is `none`. |
 | identity-service.resource | The **Client ID** for the client created within your realm that points to Content Services. The default value  is `alfresco`. |
 | identity-service.public-client | The adapter won't send credentials for the client to the Identity Service if this is set to `true`. The default value  is `true`. |
+
+#### Enable configuration for Keycloak
+
+For Keycloak compatibility, you must set `Exclude Issuer from Authentication Response` to `On`.
+
+1. Log in to the Keycloak Admin Console.
+2. Select the **alfresco** realm.
+3. Navigate to the **Clients** section.
+4. Select the client that is used by Share according to the `aims.resource` property. For more information, see [Configure authentication]({% link content-services/7.3/tutorial/sso/ldap.md %}#step-5-configure-alfresco-share-properties).
+5. Select the **Advanced** tab.
+6. Enable **Exclude Issuer from Authentication Response** and click **Save**. 
 
 ## Configure synchronization
 

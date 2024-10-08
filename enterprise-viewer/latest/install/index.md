@@ -12,7 +12,7 @@ Use this information to install the Enterprise Viewer. If you're installing both
 
 You can install the Enterprise Viewer using a distribution ZIP. Download the following ZIP file from [Hyland Community](https://community.hyland.com/products/alfresco){:target="_blank"}:
 
-* `alfresco-enterprise-viewer-package-3.5.x.zip`
+* `alfresco-enterprise-viewer-package-4.0.x.zip`
 
 ### Java
 
@@ -30,6 +30,35 @@ Operating system and libraries for the target server machine:
 
 * Windows: Windows Server 2016 or newer
 * Linux: CentOS, Ubuntu, RHL, Amazon Linux
+
+### Custom transformer configuration file
+
+If there is a requirement to transform image files to PDF, create a custom transformer configuration file (`customTranformer.json`) and add it in the path - `<TOMCAT_HOME>/shared/classes/alfresco/extension/transform/pipelines/customTranformer.json`. If you’re using Docker, you can mount the same content as a volume against the same path.
+
+* `customTranformer.json`
+
+```text
+{
+    "transformers": [
+        {
+            "transformerName": "imageToPdfViaTiff",
+            "transformerPipeline": [
+                {
+                    "transformerName": "imagemagick",
+                    "targetMediaType": "image/tiff"
+                },
+                {
+                    "transformerName": "imageToPdf"
+                }
+            ],
+            "supportedSourceAndTargetList": [],
+            "transformOptions": [
+                "imageToPdfOptions"
+            ]
+        }
+    ]
+}
+```
   
 ## Install proxy
 
@@ -255,9 +284,9 @@ You only need to follow these steps if installing AEV without ACA:
 
    > **Note:** Make sure you are using the correct `tsgrp-opencontent.amp` for your version of Alfresco.
 
-   * If using Alfresco Content Services 7.1.x, use the `tsgrp-opencontent-3.5-for-acs7.1.amp`.
-   * If using Alfresco Content Services 7.2.x, use the `tsgrp-opencontent-3.5-for-acs7.2.amp`.
-   * If using Alfresco Content Services 7.3.x, use the `tsgrp-opencontent-3.5-for-acs7.3.amp`.
+   For example:
+
+   * If using Alfresco Content Services 23.x, use the `tsgrp-opencontent-4.0.0-for-acs23.amp`.
 
 3. From the directory where your Alfresco Tomcat server is installed, run the following command to apply the AMP:
 
@@ -277,13 +306,13 @@ You only need to follow these steps if installing AEV without ACA:
 
    Navigate to the `ALFRESCO_HOME/tomcat/webapps` directory and delete the `alfresco` folder (if it exists).
 
-5. Install license file for OpenConnect:
+5. Install license file for OpenContent:
 
    Create the `module/com.tsgrp.opencontent/license` folder structure on the `/alfresco` classpath, for example, at `ALFRESCO_HOME/tomcat/shared/classes/alfresco`
 
    Place a `TextLicense.l4j` file in the `license` directory.
 
-6. Deploy the OpenConnect configuration:
+6. Deploy the OpenContent configuration:
 
     Create a file called `opencontent-override-placeholders.properties` and put it onto the `/alfresco` classpath, for example, in the `ALFRESCO_HOME/tomcat/shared/classes/alfresco/module/com.tsgrp.opencontent/` folder.
   
@@ -425,7 +454,7 @@ You only need to follow these steps if installing AEV without ACA:
 
 1. Stop Alfresco.
 
-2. Configure OpenConnect.
+2. Configure OpenContent.
 
     Update the environment variables in the provided `opencontent-override-placeholders.properties`. Deploy the updated file to the `/alfresco` classpath, for example, the `ALFRESCO_HOME/tomcat/shared/classes/alfresco/module/com.tsgrp.opencontent/` directory:
 
@@ -487,6 +516,9 @@ In this section the Enterprise Viewer collaboration features Socket.IO server is
     ```text
     forever start server.js
     ```
+In previous releases, the Socket Server URL for AEVV (Alfresco Enterprise Viewer Video) was set at build-time. There was no way to update or change the socket server URL without rebuilding the entire application. 
+
+Starting from Enterprise Viewer 3.6, an enhancement has been added so the socket server URL is fetched from the `appConfig.json` at runtime. This provides users with the capability to change the socket server URL by unpacking the `opencontent.war` file, changing the `SOCKET_URL` value in `appConfig.json`, and repacking the WAR file. You can unpack & repack the WAR file in an archive manager such as WinRAR. The URL change takes effect without rebuilding the application.
 
 ## Install webapps
 

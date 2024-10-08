@@ -4,7 +4,7 @@ title: Supported platforms
 
 Here is a list of the individual components that have been through the complete Alfresco Quality Assurance and Certification activities for Alfresco Content Services 7.1.
 
-Choose a combination of products to build your own Supported Stack. If anything is unclear then please contact [Support](https://support.alfresco.com){:target="_blank"}.
+Choose a combination of products to build your own Supported Stack. If anything is unclear then please [contact Support]({% link support/latest/contact.md %}).
 
 {% capture seven-one-one %}
 
@@ -67,6 +67,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Process Services 2.0.1 | |
 | | |
 | **Integrations** | Check the individual documentation on prerequisites and supported platforms for each integration. |
+| Alfresco Sync Service 3.11.1 | Additional compatibility testing was done with ACS 7.1, 7.2, 7.3, and 7.4. |
 | Alfresco Sync Service 3.7 | |
 | Alfresco Sync Service 3.6 | |
 | Alfresco Sync Service 3.5 | |
@@ -76,10 +77,10 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Desktop Sync 1.10 | |
 | Alfresco Desktop Sync 1.9 | |
 | Alfresco Desktop Sync 1.8 | |
+| Alfresco Transform Service 2.1.1 | Additional compatibility testing was done with ACS 7.1, 7.2, 7.3, and 7.4. |
 | Alfresco Transform Service 1.5.1 | |
 | Alfresco Document Transformation Engine 2.4 | |
 | Alfresco Document Transformation Engine 2.3 | |
-| Alfresco Search Enterprise 3.1 | For information about migrating from Alfresco Search and Insight Engine 2.x or Alfresco Search Services 2.x, see the [Alfresco Search Enterprise 3.1 upgrade page]({% link search-enterprise/latest/upgrade/index.md %}). |
 | Alfresco Search Enterprise 3.0 | For information about migrating from Alfresco Search and Insight Engine 2.0 or Alfresco Search Services 2.0, see the [Alfresco Search Enterprise 3.0 upgrade page]({% link search-enterprise/3.0/upgrade/index.md %}). |
 | Alfresco Search and Insight Engine 2.0 | Search and Insight Engine is compatible with Java 11 as long as you run Zeppelin in a Java 8 runtime. You can do this either in a VM or separate Java 8 based server. |
 | Alfresco Search Services 2.0 | |
@@ -110,11 +111,13 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Content Services SDK 4.3 | |
 | | |
 | **Applications** | |
+| Alfresco Digital Workspace 4.4 | |
 | Alfresco Digital Workspace 2.6 | |
 | Alfresco Digital Workspace 2.5 | |
 | Alfresco Digital Workspace 2.4 | |
 | Alfresco Application Development Framework (ADF) 5.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
 | Alfresco Application Development Framework (ADF) 4.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
+| Alfresco Mobile Workspace 1.8 | |
 | Alfresco Mobile Workspace 1.7 | |
 | Alfresco Mobile Workspace 1.6 | |
 | Alfresco Mobile Workspace 1.5 | |
@@ -188,6 +191,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Process Services 2.0.1 | |
 | | |
 | **Integrations** | Check the individual documentation on prerequisites and supported platforms for each integration. |
+| Alfresco Sync Service 3.11.1 | Additional compatibility testing was done with ACS 7.1, 7.2, 7.3, and 7.4. |
 | Alfresco Sync Service 3.7 | |
 | Alfresco Sync Service 3.6 | |
 | Alfresco Sync Service 3.5 | |
@@ -197,6 +201,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Desktop Sync 1.10 | |
 | Alfresco Desktop Sync 1.9 | |
 | Alfresco Desktop Sync 1.8 | |
+| Alfresco Transform Service 2.1.1 | Additional compatibility testing was done with ACS 7.1, 7.2, 7.3, and 7.4. |
 | Alfresco Transform Service 1.5.1 | |
 | Alfresco Transform Service 1.4.1 | |
 | Alfresco Document Transformation Engine 2.4 | |
@@ -231,11 +236,13 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Content Services SDK 4.3 | |
 | | |
 | **Applications** | |
+| Alfresco Digital Workspace 4.4 | |
 | Alfresco Digital Workspace 2.6 | |
 | Alfresco Digital Workspace 2.5 | |
 | Alfresco Digital Workspace 2.4 | |
 | Alfresco Application Development Framework (ADF) 5.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
 | Alfresco Application Development Framework (ADF) 4.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
+| Alfresco Mobile Workspace 1.8 | |
 | Alfresco Mobile Workspace 1.7 | |
 | Alfresco Mobile Workspace 1.6 | |
 | Alfresco Mobile Workspace 1.5 | |

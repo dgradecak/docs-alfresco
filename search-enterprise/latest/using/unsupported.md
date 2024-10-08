@@ -2,15 +2,10 @@
 title: Unsupported features
 ---
 
-The following features, which were supported with Search and Insight Engine 2.x and Search Services 2.x (Solr) are not supported in the latest release for Search Enterprise 3.x.
-
-## Indexing
-
-* Indexing of nodes created during content repository bootstrap. For example, the sample site data.
+The following features, which were supported with Search and Insight Engine 2.x and Search Services 2.x (Solr) are not supported in the latest release for Search Enterprise 4.x.
 
 ## Search features
 
-* Aspect queries (it works only using exact aspect name)
 * Fingerprinting
 * Resource limiting
 * Scoped search
@@ -19,7 +14,6 @@ The following features, which were supported with Search and Insight Engine 2.x 
 ### Search Syntax
 
 * Fuzzy matching
-* Search for spans and positions
 * Field Facets Pagination
 * Field Facets Tags Exclusion
 
@@ -70,15 +64,9 @@ The following are examples of how to use different fields for queries:
 
 * SQL query language using JDBC Driver
 
-## Tools & Components
-
-* Alfresco Search and Insight Engine
-* Alfresco Enterprise Viewer
-* Alfresco Content Accelerator
-
 ## Unsupported data types and properties
 
-Data types and properties supported in Search and Insight Engine 2.x and Search Services 2.x that are not currently supported for Search Enterprise 3.x.
+Data types and properties supported in Search and Insight Engine 2.x and Search Services 2.x that are not currently supported for Search Enterprise 4.x.
 
 * http&#65279;://www.alfresco.org/model/dictionary/1.0}any
 * http&#65279;://www.alfresco.org/model/dictionary/1.0}assocref

@@ -5,7 +5,7 @@ title: Action Configurations
 
 ## Bulk Upload
 
-Bulk Upload allows a user to select multiples files to upload, edit common properties for all documents, edit individual document properties and upload all documents. Additionally, Bulk Upload has support for scanning, generating a cover page (drop-off scanning) and MSG file parsing.
+Bulk Upload allows a user to select multiples files to upload, edit common properties for all documents, edit individual document properties and upload all documents. Additionally, Bulk Upload has support for scanning and MSG file parsing.
 
 ### Configuration
 
@@ -14,7 +14,6 @@ The features currently available is Bulk Upload are as follows:
 * Set doc as new version of existing document - **must be enabled in the admin**
 * Scanning - **must be enabled in the admin**
 * Create Document from Template - **must be enabled in the admin**
-* Generating a cover page / drop-off scanning - **must be enabled in the admin**
 * Parsing MSG files for attachments (and recursively parsing attached MSG files)
 * Gmail Inbox ingestion - **must be enabled in the admin**
 * Inheriting Folder Attributes
@@ -37,11 +36,11 @@ Enable this configuration to allow users to set an uploaded doc as a new minor v
 
 #### Scanning
 
-The Bulk Upload scanning functionality allows a user to scan multiple documents and upload them. To enable, change the "Allow Documents from Scanner" slider to "Yes" in the Bulk Upload Action  Advanced Properties section of the admin config.
+The Bulk Upload scanning functionality allows a user to scan multiple documents and upload them. To enable, change the **Allow Documents from Scanner** slider to `Yes` in the Bulk Upload Action  Advanced Properties section of the admin config.
 
 ##### Setting up Scanning
 
-Follow the steps to setup Scanning paper documents into ACA. Currently, this functionality is set using HTML5 and Dynamic Web TWAIN (DWT) Version 12.3.1.
+Follow the steps to setup Scanning paper documents into ACA. Currently, this functionality is set using Dynamic Web TWAIN (DWT) Version 18.5.
 
 ###### Install Scanner Drivers
 
@@ -49,29 +48,22 @@ You must have a TWAIN-compliant scanner plugged into your machine with the prope
 
 ###### Install Dynamic Web TWAIN
 
-Run the `DynamicWebTWAINHTML5Edition.exe` installation file.
+There are two ways to install Dynamic Web TWAIN:
+
+* Download and run the `Dynamsoft-Service-Setup` installation file from Dynamsoft Downloads (Download the installer according to your OS).
+* Download the installer on the Bulk Upload window. Right-click the **Download** icon, copy the link, paste it in a new browser tab, and hit **Enter**.
+
+![Bulk Upload window]({% link content-accelerator/images/aca-dynamsoft-service-not-installed.JPG %})
 
 ##### Configuration Options for Scanning
 
-**License Key:** The licence key from Dynamsoft - this must be configured properly for the functionality to work as expected.
+**License Key:** The License key from Dynamsoft - this must be configured properly for the functionality to work as expected.
+
+![License Key Configuration]({% link content-accelerator/images/aca-license-key.png %})
 
 #### Create Document from Template
 
 The Bulk Upload create document from template functionality allows a user to upload a new document by using content that already exists in the repository.
-
-#### Cover Page / Drop-off Scanning
-
-The Bulk Upload action provides the user the ability to generate a cover page for drop-off scanning functionality.
-
-##### Configuration Options for Cover Page / Drop-off Scanning
-
-**Button Name:** The text to display on the button used to initiate the generation of a cover page.
-
-**Attribute to Generate Barcode With:** The attribute to use for generating the barcode on the cover page. _A **common** string property must be used for this configuration option._
-
-**Cover Page Title:** The title to display at the top of the generated cover page.
-
-**Attributes to Display on Cover Page:** Enable this option to choose attributes by object type to display in a table on the generated cover page.
 
 #### Parsing MSG Files
 
@@ -155,13 +147,35 @@ The Download Document (sometimes also referred to as the Export Native Content) 
 
 ### Configuration Options for Download Document
 
-#### Available Rendition Types
-
-The action can be configured to download either the native content or the PDF rendition of the document being viewed in the stage. This configuration applies to all document types.
-
 #### Downloaded File Name
 
 The action can be configured to use a pattern for the downloaded file name based on object type. Each document object type may have its own pattern of its attribute and constant characters to use for the downloaded file name.
+
+#### Configuration Options for Download Document
+
+In the Download Type section, the following settings are available:
+Allow End User to specify Rendition/Native Content on Download
+If you enable this setting using the toggle switch, you can specify the download type every time you download a document.
+
+#### Available Rendition Type default
+
+You can configure the default rendition type to download files in the set rendition by default. You can set the default rendition type to any of the rendition types available in the drop-down, including PDF rendition and native client. 
+
+#### Allow End User to specify whether to include annotations on Download of a pdf
+
+If you enable this setting using the toggle switch, you are prompted to specify whether you want to include annotations every time you download a PDF document.
+
+#### Download with Annotations Default
+
+If you enable this setting using the toggle switch, annotations are included in PDF downloads by default. 
+
+#### Allow End User to specify whether to include overlays on Download of a pdf
+
+If you enable this setting using the toggle switch, you are prompted to specify whether you want to include overlays every time you download a PDF document.
+
+#### Download with Overlays Default
+
+If you enable this setting using the toggle switch, overlays are included in PDF downloads by default. 
 
 ## Export folder
 

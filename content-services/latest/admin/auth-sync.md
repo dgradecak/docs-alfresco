@@ -44,11 +44,8 @@ The following table shows the authentication subsystem types supplied and the op
 | kerberos | Authentication through a Kerberos realm | Yes, SPNEGO | No |
 | external | Authentication using an external SSO mechanism | Yes | No |
 | identity-service | Authentication using the Identity Service | Yes | No |
-| SAML | Authentication through the SAML open standard | Yes | No |
 
 > **Important:** Support for Microsoft Office depends on the authentication mechanism provided by the `external` subsystem. See [External authentication and SSO](#extauthsso) for more information.
-
-> **Important:** SAML Single Sign On can be used for Content Services and Alfresco Office Services. SAML Single Sign On is not fully implemented when mapping a PC network drive over WebDAV, i.e. to either `<alfresco_host>/alfresco/webdav` or `<alfresco_host>/alfresco/aos` endpoints. As a workaround, a PC user should use SAML to login to Content Services before mapping the drive, otherwise the map request may fail.
 
 > **Note:** If you're using a proxy (load balancer) with Kerberos authentication, either:
 

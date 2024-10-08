@@ -14,17 +14,17 @@ The Content Accelerator can be installed using distribution zips. These zips can
 
 You will need to download the following distribution zips in order to install ACA:
 
-* alfresco-content-accelerator-base-package-3.5.x.zip
-* (Claims Only) alfresco-content-accelerator-claims-accelerator-3.5.x.zip
-* (PnP Only) alfresco-content-accelerator-policy-and-procedure-accelerator-3.5.x.zip
-* (HR Only) alfresco-content-accelerator-sehr-accelerator-3.5.x.zip
-* (HR Tier-2 Only) alfresco-content-accelerator-sehr-rm-accelerator-3.5.x.zip
+* alfresco-content-accelerator-base-package-4.0.x.zip
+* (Claims Only) alfresco-content-accelerator-claims-accelerator-4.0.x.zip
+* (PnP Only) alfresco-content-accelerator-policy-and-procedure-accelerator-4.0.x.zip
+* (HR Only) alfresco-content-accelerator-sehr-accelerator-4.0.x.zip
+* (HR Tier-2 Only) alfresco-content-accelerator-sehr-rm-accelerator-4.0.x.zip
 
-> **Note:** If you're installing the HR Employee File Management (HR EFM) solution, you will need to get the HR EFM pre-release artifacts from [Hyland Confluence](https://hyland.atlassian.net/wiki/spaces/SESS/pages/687540729/Alfresco+HR+Employee+File+Management){:target="blank"} rather than using the distribution zips in Hyland Community.
+> **Note:**  If you’re installing the HR Employee File Management (HR EFM) solution, the HR EFM artifacts (solution AMPs and configurations) are stored in [Hyland Confluence](https://hyland.atlassian.net/wiki/spaces/SESS/pages/687540729/Alfresco+HR+Employee+File+Management){:target="blank"}. The rest of the solution deployment resources are in distribution zips in Hyland Community.
 
 ### Java
 
-Content Accelerator requires Java 11 or above. Consult your repository of choice for more detailed requirements. If you are using Java 17, refer to our [Java 17 support guide]({% link content-accelerator/latest/install/java-support.md %}).
+Content Accelerator requires Java 17 or above. Consult your repository of choice for more detailed requirements. If you are using Java 17, refer to our [Java 17 support guide]({% link content-accelerator/latest/install/java-support.md %}).
 
 ### Alfresco repository version
 
@@ -300,7 +300,7 @@ In this section we ensure that all components of the Content Accelerator are ins
 
 1. Stop the Alfresco server
 
-2. Copy the AMPs to the Alfresco Content Services installation:
+1. Copy the AMPs to the Alfresco Content Services installation:
 
    Navigate to the `ALFRESCO_HOME/amps` directory and copy the following amps to this directory (these are amps that should be applied to the repository a.k.a `alfresco.war`):
 
@@ -316,7 +316,7 @@ In this section we ensure that all components of the Content Accelerator are ins
    * If using Alfresco Content Services 7.3.x, use the `tsgrp-opencontent-3.5.x-for-acs7.3.amp`.
    * If using Alfresco Content Services 7.4.x, use the `tsgrp-opencontent-3.5.x-for-acs7.4.amp`.
 
-3. (PnP ONLY) This step is only required if installing the Policy and Procedure Content Accelerator solution:
+1. (PnP ONLY) This step is only required if installing the Policy and Procedure Content Accelerator solution:
 
    Navigate to the `ALFRESCO_HOME/amps` directory and copy the following amps there:
 
@@ -325,14 +325,14 @@ In this section we ensure that all components of the Content Accelerator are ins
 
    These amps can be found in the alfresco-content-accelerator-policy-and-procedure-accelerator distribution zip under `Alfresco Artifacts` folder.
 
-4. (Claims ONLY) This step is only required if installing the Claims Content Accelerator solution:
+1. (Claims ONLY) This step is only required if installing the Claims Content Accelerator solution:
 
    Navigate to the `ALFRESCO_HOME/amps` directory and copy the following amps there:
    `claims-platform-3.5.amp`
 
-   This amp can be found in the `alfresco-content-accelerator-claims-accelerator` distribution zip under `Alfresco Artifacts` folder.
+   This AMP can be found in the `alfresco-content-accelerator-claims-accelerator` distribution zip under `Alfresco Artifacts` folder.
 
-5. (HR ONLY) This step is only required if installing the HR Content Accelerator solution:
+1. (HR ONLY) This step is only required if installing the HR Content Accelerator solution:
 
    Navigate to the `ALFRESCO_HOME/amps` directory and copy the following amps there:
 
@@ -340,26 +340,26 @@ In this section we ensure that all components of the Content Accelerator are ins
    * `tsgrp-cascading-value-assistance.amp`
    * `tsgrp-alfresco-chain-versioning.amp`
 
-   Navigate to `ALFRESCO_HOME/amps_share` directory and copy the following amp there:
+   Navigate to `ALFRESCO_HOME/amps_share` directory and copy the following AMP there:
 
    * `tsgrp-cascading-value-assistance-share.amp`
 
-   This amp can be found in the `alfresco-content-accelerator-sehr-accelerator` distribution zip under the `Alfresco Artifacts` folder.
+   This AMP can be found in the `alfresco-content-accelerator-sehr-accelerator` distribution zip under the `Alfresco Artifacts` folder.
 
-6. (HR Tier-2 ONLY) This step is only required if installing the HR Tier-2 Content Accelerator solution:
+1. (HR Tier-2 ONLY) This step is only required if installing the HR Tier-2 Content Accelerator solution:
 
    Navigate to the `ALFRESCO_HOME/amps` directory and copy the following amps there:
 
    * `sehr-rm-platform-1.0-SNAPSHOT.amp`
    * `alfresco-governance-services-enterprise-repo-12.21.amp`
 
-   Navigate to `ALFRESCO_HOME/amps_share` directory and copy the following amp there:
+   Navigate to `ALFRESCO_HOME/amps_share` directory and copy the following AMP there:
 
    * `alfresco-governance-services-enterprise-share-12.19.amp`
 
-    This amp can be found in the `alfresco-content-accelerator-sehr-rm-accelerator` distribution zip under the `Alfresco Artifacts` folder.
+    This AMP can be found in the `alfresco-content-accelerator-sehr-rm-accelerator` distribution zip under the `Alfresco Artifacts` folder.
 
-7. Apply the AMPs
+1. Apply the AMPs
 
    From the directory where your alfresco tomcat lives, run this command for each Repository AMP required (replace `{myAmp}` with the correct AMP name and `{ALFRESCO_HOME}` with the location of your alfresco):
 
@@ -371,20 +371,20 @@ In this section we ensure that all components of the Content Accelerator are ins
 
    `java\{javaVersion}\bin\java -jar {ALFRESCO_HOME}\bin\alfresco-mmt.jar install {ALFRESCO_HOME}\amps\{myAmp}.amp tomcat\webapps\alfresco.war -force`
 
-8. Delete current Alfresco deployed WAR files
+1. Delete current Alfresco deployed WAR files
 
    Navigate to the `ALFRESCO_HOME/tomcat/webapps` directory and delete the following [folders] (if they exist) to ensure old versions of the `alfresco.war` and `share.war` are not run:
 
    * `alfresco`
    * `share`
 
-9. Install license file for OpenConnect
+1. Install license file for OpenContent
 
    Create the `module/com.tsgrp.opencontent/license` folder structure on the /alfresco classpath, for example, at `ALFRESCO_HOME/tomcat/shared/classes/alfresco`
 
    Place a `TextLicense.l4j` file in the `license` directory.
 
-10. Deploy the OpenConnect configuration:
+1. Deploy the OpenContent configuration:
 
     Deploy/Copy the following files onto the /alfresco classpath, for example, `ALFRESCO_HOME/tomcat/shared/classes/alfresco/module/com.tsgrp.opencontent/` folder:
   
@@ -394,7 +394,7 @@ In this section we ensure that all components of the Content Accelerator are ins
 
    These files can be found in the `Alfresco Artifacts` folder of the alfresco-content-accelerator-base-package zip.
 
-11. Configure OpenConnect
+1. Configure OpenContent
 
     In the `opencontent-override-placeholders.properties` file deployed in the last step, update the following environment variables:
 
@@ -406,7 +406,7 @@ In this section we ensure that all components of the Content Accelerator are ins
     * `oc.email.smtp.host={SMTP host}`
     * `imageMagick.path=IMAGEMAGICK_HOME` (if installed, get IMAGEMAGICK_HOME value from [ImageMagick Installation]({% link content-accelerator/latest/install/install-guide.md %}#im))
 
-12. Update Tomcat server configuration:
+1. Update Tomcat server configuration:
 
    By default, Apache Tomcat doesn't support UTF-8 characters for languages other than English. To enable support, the web.xml and server.xml files need to be modified in the deployed Tomcat.
 
@@ -465,30 +465,45 @@ In this section we ensure that all components of the Content Accelerator are ins
    >**Note:** that in a typical Alfresco installation, the 8080 connector can be modified for HTTP communications and
    >the 443 connector can be modified for HTTPS connections.
 
-13. (OPTIONAL) This step is only required if using Alfresco Search Services 2.0 or greater:
+1. (OPTIONAL) This step is only required if you are using Alfresco Search Services 2.0 or greater:
 
     a. Navigate to the `SOLR_HOME/solrhome/conf` folder.
 
     b. In the file `shared.properties`, uncomment the following properties (if not already uncommented):
 
-       * `alfresco.cross.locale.datatype.0={http://www.alfresco.org/model/dictionary/1.0}text`
-       * `alfresco.cross.locale.datatype.1={http://www.alfresco.org/model/dictionary/1.0}content`
-       * `alfresco.cross.locale.datatype.2={http://www.alfresco.org/model/dictionary/1.0}mltext`
+      * `alfresco.cross.locale.datatype.0={http://www.alfresco.org/model/dictionary/1.0}text`
+      * `alfresco.cross.locale.datatype.1={http://www.alfresco.org/model/dictionary/1.0}content`
+      * `alfresco.cross.locale.datatype.2={http://www.alfresco.org/model/dictionary/1.0}mltext`
 
     c. Once the above changes have been made, Solr must be reindexed.
 
-       Stop the Solr process if it is running.
+   Stop the Solr process if it is running.
 
-       Clear out the following folder paths:
-       * `SOLR_HOME/solrhome/alfresco/index`
-       * `SOLR_HOME/solrhome/archive/index`
-       * `SOLR_HOME/solrhome/alfrescoModels`
+   Clear out the following folder paths:
 
-       Start Solr process.
+    * `SOLR_HOME/solrhome/alfresco/index`
+    * `SOLR_HOME/solrhome/archive/index`
+    * `SOLR_HOME/solrhome/alfrescoModels`
 
-14. Start up Alfresco server.
+   Start the Solr process.
 
-15. Confirm OpenContent has been installed correctly by accessing `http://{server}/alfresco/OpenContent`.
+1. (OPTIONAL) This step is only required if you are using Alfresco Search Enterprise 3.x or greater:
+
+    a. Enable "Exact Term Search" using the "=" operator. See the [Search Enterprise - Exact Term Search]({% link search-enterprise/latest/config/index.md %}#exact-term-search) section for additional information.
+
+    b. In the configuration file, add the following lines to enable exact term search:
+
+    * `alfresco.cross.locale.datatype.0={http://www.alfresco.org/model/dictionary/1.0}text`
+    * `alfresco.cross.locale.datatype.1={http://www.alfresco.org/model/dictionary/1.0}mltext`
+    * `alfresco.cross.locale.property.0={http://www.alfresco.org/model/content/1.0}content`
+
+    c. Reindex Search Enterprise. See the [Search Enterprise - Install overview]({% link search-enterprise/latest/install/index.md %}) page.
+
+    >**Note:** During the first system bootstrap for new systems with `tsgrp-autofile.amp`, Search Enterprise must be reindexed. See the [Search Enterprise - Install overview]({% link search-enterprise/latest/install/index.md %}) page for additional information.
+
+1. Start up Alfresco server.
+
+1. Confirm OpenContent has been installed correctly by accessing `http://{server}/alfresco/OpenContent`.
 
 ## Install webapps
 
@@ -499,7 +514,7 @@ This sections walks through how to install the Alfresco Content Accelerator web 
 
 ### Install web applications on separate Tomcat {#install-webapps-separate-tomcat}
 
-This section walks through how to install the web applications on a separate Tomcat instance (Meaning, you must have a proxy setup).
+This section walks through how to install the web applications on a separate Tomcat instance (meaning, you must have a proxy setup).
 
 1. Install Apache Tomcat. See [https://archive.apache.org/dist/tomcat](https://archive.apache.org/dist/tomcat){:target="_blank"}.
 
@@ -509,7 +524,7 @@ This section walks through how to install the web applications on a separate Tom
 
 3. (PnP and HR ONLY) This step is only required if using the Policy and Procedure Content Accelerator or HR Content Accelerator solution:
 
-   Copy the `WizardAdmin.war` file into the `ALFRESCO_HOME/tomcat/webapps` directory.
+   Copy the `WizardAdmin.war` file into the `ALFRESCO_HOME/tomcat/webapps` directory. (**Note:** Apache Tomcat 8.x or 9.x is recommended for Active Wizard Admin).
 
    You'll find this WAR file in the `Web Applications` folder of the `alfresco-content-accelerator-policy-and-procedure-accelerator` zip or `alfresco-content-accelerator-sehr-accelerator` zip.
 
@@ -558,7 +573,7 @@ This section walks through how to install the web applications on a separate Tom
 
 10. (OPTIONAL) This step is only required if using the Policy and Procedure Content Accelerator solution AND if `TOMCAT_HOME` is NOT `/opt/ocms-policy/apache-tomcat`
 
-    Navigate to `TOMCAT_HOME/webapps` and extract the `WizardAdmin.war`.
+    Navigate to `TOMCAT_HOME/webapps` and extract the `WizardAdmin.war`. (**Note:** Apache Tomcat 8.x or 9.x is recommended for Active Wizard Admin).
 
     Navigate to `TOMCAT_HOME/webapps/WizardAdmin/WEB-INF/classes` and modify the following files to have the proper path to your `TOMCAT_HOME` on the line numbers listed:
 
@@ -585,7 +600,7 @@ This section walks through how to install the web applications on Alfresco Tomca
 
 3. (PnP and HR ONLY) This step is only required if using the Policy and Procedure Content Accelerator or HR Content Accelerator solution:
 
-   Copy the `WizardAdmin.war` file into the `ALFRESCO_HOME/tomcat/webapps` directory.
+   Copy the `WizardAdmin.war` file into the `ALFRESCO_HOME/tomcat/webapps` directory. (**Note:** Apache Tomcat 8.x or 9.x is recommended for Active Wizard Admin).
 
    You'll find this WAR file in the `Web Applications` folder of the `alfresco-content-accelerator-policy-and-procedure-accelerator` zip or `alfresco-content-accelerator-sehr-accelerator` zip.
 
@@ -630,7 +645,7 @@ This section walks through how to install the web applications on Alfresco Tomca
 
 9. (OPTIONAL) This step is only required if using the Policy and Procedure Content Accelerator solution:
 
-    Navigate to `ALFRESCO_HOME/tomcat/webapps` and extract the `WizardAdmin.war`.
+    Navigate to `ALFRESCO_HOME/tomcat/webapps` and extract the `WizardAdmin.war`. (**Note:** Apache Tomcat 8.x or 9.x is recommended for Active Wizard Admin).
 
     Navigate to `ALFRESCO_HOME/tomcat/webapps/WizardAdmin/WEB-INF/classes` and modify the following files to have the proper
     path to your `ALFRESCO_HOME` on the line numbers listed:
@@ -679,25 +694,15 @@ This section walks through how to install the web applications on Alfresco Tomca
 
    Obtain the `default-{accelerator}.zip` for your accelerator and rename the zip to `default.zip`.
 
-5. Import default configuration. There are two ways you can do this.
+5. Import default configuration using config import tool.
 
-   OPTION 1 - use the config import tool (This may not be available on initial install):
+      1. In a browser, navigate to {Application Base URL}/ocms and login to the application as the Alfresco Administrator. The screen displays a message that no configurations exist for the application yet.
 
-      * In a browser navigate to `{Application Base URL}/ocms/admin/ConfigArchiver` and login to the application as the Alfresco Administrator.
+      2. Click the button that is included in the message to navigate to the administration interface.
 
-      * Use the *Import Config* function to import the `default.zip` from the last step.
+      3. Navigate to **Tools** > **Config Archiver** from the left menu.
 
-   OPTION 2 - upload the configs via share:
-
-      * In a browser navigate to `{Application Base URL}/share` and login to the application as the Alfresco Administrator.
-
-      * Navigate to the repository and into the folder `hpi`
-
-      * Drag and drop the `default.zip` into this location
-
-      * Delete all contents of the current `default` folder
-
-      * Click on the `default.zip` and choose the "unzip to" action, select the `repository> hpi> default` folder
+      4. Use the Import Config function to import the default.zip from the previous step.
 
 6. (OPTIONAL) This step is only required if **NOT** using the Alfresco Enterprise Viewer:
 
