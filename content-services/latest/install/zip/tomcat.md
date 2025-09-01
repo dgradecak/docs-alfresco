@@ -64,34 +64,55 @@ The installation directory for Tomcat is represented as `<TOMCAT_HOME>`.
 
     2. Copy the files `alfresco.xml` and `share.xml` from the distribution zip `/web-server/conf/Catalina/localhost` to `<TOMCAT_HOME>/conf/Catalina/localhost` (or hostname).
 
-7. Configure mutual TLS for Solr communication.
+7. Configure Content Services for Solr communication by performing one of the following:
 
-    The communication with Solr is encrypted and authenticated via mutual TLS. For this connection, you need an additional Connector.
+    * Install with mutual TLS, where the communication with Solr is encrypted and authenticated via mutual TLS.
 
-    > **Note:** This Connector isn't used by end users. Its sole purpose is to handle the communication with Solr.
+    * Install without mutual TLS using HTTP with a secret word in the request header.
+
+    > **Note:** For more information on installing with or without mutual TLS, see [Install Alfresco Search Services]({%link search-services/latest/install/options.md %}).
+
+8. When installing with mutual TLS, perform the following steps to configure the Tomcat connector:
+
+    > **Note:** This connector isn't used by end users. Its sole purpose is to handle the communication with Solr.
 
     1. Open the `<TOMCAT_HOME>/conf/server.xml` file.
 
-    2. Add the following Connector:
+    2. Add the following connector:
 
         ```xml
-        <Connector port="8443" protocol="HTTP/1.1"
-            SSLEnabled="true" maxThreads="150" scheme="https"
-            keystoreFile="xxxxx"
-            keystorePass="password" keystoreType="JCEKS"
-            secure="true" connectionTimeout="240000"
-            truststoreFile="xxxxx"
-            truststorePass="password" truststoreType="JCEKS"
-            clientAuth="want" sslProtocol="TLS" />
+        <Connector port="8443"
+           protocol="org.apache.coyote.http11.Http11NioProtocol"
+           connectionTimeout="20000"
+           maxThreads="150"
+           SSLEnabled="true"
+           scheme="https"
+           secure="true"
+           defaultSSLHostConfigName="localhost">
+	    <SSLHostConfig hostName="localhost"
+	               protocols="TLSv1.2"
+	               certificateVerification="required"
+	               truststoreFile="/usr/local/tomcat/alf_data/keystore/ssl.truststore"
+	               truststorePassword="truststore"
+	               truststoreType="JCEKS">
+		<Certificate certificateKeystoreFile="/usr/local/tomcat/alf_data/keystore/ssl.keystore"
+		             certificateKeyAlias="ssl.repo"
+		             type="RSA"
+		             certificateKeystorePassword="keystore"
+		             certificateKeystoreType="JCEKS"/>
+	    </SSLHostConfig>
+        </Connector>
         ```
 
-        > **Note:** The keystore and truststore file locations in the above example will be created later, when you install and configure Alfresco Search Services.
+        When configuring the Tomcat connector, consider the following:
 
-        > **Note:** If you're using a different keystore or truststore type other than the default, `JCEKS`, you must change the value in the properties file.
+        * The keystore and truststore files have to be generated to ensure the best security level when installing Alfresco Search Services. You can choose the location of your choice. By default, they are stored either in the Tomcat installation directory or in the `alf_data` directory. For more information, see [Alfresco Search Services secure keys generation]({%link search-services/latest/config/keys.md %}#set-up-certificates).
 
-        > **Note:** In Tomcat versions prior to 9 it was possible to use `org.apache.coyote.http11.Http11Protocol` as the protocol value, but now it has been removed. If you are using configuration from an old instance using a Tomcat version before 9, you need to update the connector protocol value.
+        * If you're using a different keystore or truststore type other than the default, `JCEKS`, you must change the value in the properties file.
 
-8. Save the `server.xml` file.
+        * In Tomcat versions prior to 9 it was possible to use `org.apache.coyote.http11.Http11Protocol` as the protocol value, but now it has been removed. If you are using configuration from an old instance using a Tomcat version before 9, you need to update the connector protocol value.
+
+9. Save the `server.xml` file.
 
 > **Important:** Remember to review and update the Connector details in `server.xml`, including the keystore and truststore file locations, after installing and configuring Alfresco Search Services.
 

@@ -18,10 +18,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Windows Server 2022 | |
 | Windows Server 2019 | |
 | Amazon Linux | v2 |
-| CentOS 8.3 x64 | |
-| CentOS 7.9 x64 | |
 | Ubuntu 22.04 | |
-| Ubuntu 20.04 | |
 | Rocky Linux 8.7 | |
 |  |  |
 | **Databases** | |
@@ -96,8 +93,8 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Mobile Workspace 1.9 | |
 | Alfresco Control Center 8.3 | |
 | Alfresco Application Development Framework (ADF) 6.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
-| Alfresco Content Accelerator (ACA) 3.6 | |
-| Alfresco Enterprise Viewer (AEV) 3.6 | |
+| Alfresco Content Accelerator (ACA) 3.7 | |
+| Alfresco Enterprise Viewer (AEV) 3.7 | |
 | | |
 | **Components** | |
 | ImageMagick v7.1.0-16 | |
@@ -117,10 +114,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Windows Server 2022 | |
 | Windows Server 2019 | |
 | Amazon Linux | v2 |
-| CentOS 8.3 x64 | |
-| CentOS 7.9 x64 | |
 | Ubuntu 22.04 | |
-| Ubuntu 20.04 | |
 | Rocky Linux 8.7 | |
 |  |  |
 | **Databases** | |
@@ -237,10 +231,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Windows Server 2022 | |
 | Windows Server 2019 | |
 | Amazon Linux | v2 |
-| CentOS 8.3 x64 | |
-| CentOS 7.9 x64 | |
 | Ubuntu 22.04 | |
-| Ubuntu 20.04 | |
 | Rocky Linux 8.7 | |
 |  |  |
 | **Databases** | |

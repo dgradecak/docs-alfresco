@@ -18,10 +18,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Red Hat Enterprise Linux 8.2 x64 | |
 | Windows Server 2019 | |
 | Amazon Linux | v2 |
-| CentOS 7.9 x64 | |
-| CentOS 8.3 x64 | |
 | Ubuntu 20.04 | |
-| Ubuntu 18.04 | |
 |  |  |
 | **Databases** | |
 | MySQL 8 | `mysql-connector-java-8.0.27.jar` |
@@ -99,8 +96,8 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Alfresco Control Center 7.5 | |
 | Alfresco Application Development Framework (ADF) 4.x | Some API functionality may be available only in the latest Alfresco Content Services release. |
 | Alfresco Mobile Workspace 1.8 | |
-| Alfresco Content Accelerator (ACA) 3.6 | |
-| Alfresco Enterprise Viewer (AEV) 3.6 | |
+| Alfresco Content Accelerator (ACA) 3.7 | |
+| Alfresco Enterprise Viewer (AEV) 3.7 | |
 | | |
 | **Components** | |
 | ImageMagick v7.1.0-16 | |
@@ -120,10 +117,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Red Hat Enterprise Linux 8.2 x64 | |
 | Windows Server 2019 | |
 | Amazon Linux | v2 |
-| CentOS 7.9 x64 | |
-| CentOS 8.3 x64 | |
 | Ubuntu 20.04 | |
-| Ubuntu 18.04 | |
 |  |  |
 | **Databases** | |
 | MySQL 8 | `mysql-connector-java-8.0.27.jar` |
@@ -257,10 +251,7 @@ Choose a combination of products to build your own Supported Stack. If anything 
 | Red Hat Enterprise Linux 8.2 x64 | |
 | Windows Server 2019 | |
 | Amazon Linux | v2 |
-| CentOS 7.9 x64 | |
-| CentOS 8.3 x64 | |
 | Ubuntu 20.04 | |
-| Ubuntu 18.04 | |
 |  |  |
 | **Databases** | |
 | MySQL 8 | `mysql-connector-java-8.0.27.jar` |
